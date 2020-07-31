@@ -41,17 +41,17 @@ class Main extends PluginBase implements Listener {
         $this->getResource("config.yml");
     }
     
-    public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool {
-        if($sender->hasPermission("rules.command")) {
+    public function onCommand(CommandSender $player, Command $cmd, string $label, array $args) : bool {
+        if($player->hasPermission("rules.command")) {
             if($cmd->getName() == "rules") {
-                if(!$sender instanceof Player) {
-                    $sender->sendMessage("This command only works in game!");
+                if(!$player instanceof Player) {
+                    $player->sendMessage("This command only works in game!");
                 } else {
                     $this->kygekRulesUI($player);
                 }
             }
         } else {
-            $sender->sendMessage("You do not have permission to use this command");
+            $player->sendMessage("You do not have permission to use this command");
         }
         return true;
     }
