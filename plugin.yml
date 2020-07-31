@@ -21,7 +21,7 @@ version: 1.0.0
 author: Kygekraqmak
 
 command:
-    rules:  #"test" this is the name of the command
+    rules:
         description: Server rules in UI form
         usage: /rules
         
