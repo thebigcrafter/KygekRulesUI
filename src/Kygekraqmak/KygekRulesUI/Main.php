@@ -47,7 +47,7 @@ class Main extends PluginBase implements Listener {
                 if(!$sender instanceof Player) {
                     $sender->sendMessage("This command only works in game!");
                 } else {
-                    $this->kygekRulesUI($sender);
+                    $this->kygekRulesUI($player);
                 }
             }
         } else {
