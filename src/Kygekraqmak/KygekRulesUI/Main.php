@@ -58,22 +58,22 @@ class Main extends PluginBase implements Listener {
     
     public function kygekRulesUI($sender) {
         $form = new SimpleForm(function (Player $sender, int $data = null) {
-           $result = $data;
-           if($result === null){
-               return true;
-           }             
-           switch($result){
-               case 0:
-                    
-               break;
-
-               }
-           });
-           $form->setTitle($this->getConfig()->get("title"));
-           $form->setContent($this->getConfig()->get("content"));
-           $form->addButton($this->getConfig()->get("button"));
-           $form->sendToPlayer($sender);
-           return $form;
+            if($data === null){
+                return true;
+            }             
+            switch($data){
+                case 0:
+                break;
+            }
+        });
+        $title = str_replace("{player}", $player->getName(), $this->getConfig()->get("title"));
+        $content = str_replace("{player}", $player->getName(), $this->getConfig()->get("content"));
+        $button = str_replace("{player}", $player->getName(), $this->getConfig()->get("button"));
+        $form->setTitle($title);
+        $form->setContent($content);
+        $form->addButton($button);
+        $form->sendToPlayer($sender);
+        return $form;
     }
     
 }
