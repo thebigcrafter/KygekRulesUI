@@ -1,2 +1,16 @@
-config.yml
+# KygekRulesUI plugin config
+# Created by Kygekraqmak
+
+# Use "{player}" to display player name
+# Use "§" as formatting codes
+# Use "\n" to break into a new line
+
+# Set the KygekRulesUI title here:
+title: "KygekRulesUI"
+
+# Set the KygekRulesUI content here:
+content: "Change in config.yml!"
+
+# Seth the KygekRulesUI button here:
+button: "Ok"
 ...
