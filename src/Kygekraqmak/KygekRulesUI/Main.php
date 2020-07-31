@@ -56,8 +56,8 @@ class Main extends PluginBase implements Listener {
         return true;
     }
     
-    public function kygekRulesUI($sender) {
-        $form = new SimpleForm(function (Player $sender, int $data = null) {
+    public function kygekRulesUI($player) {
+        $form = new SimpleForm(function (Player $player, int $data = null) {
             if($data === null){
                 return true;
             }             
@@ -72,7 +72,7 @@ class Main extends PluginBase implements Listener {
         $form->setTitle($title);
         $form->setContent($content);
         $form->addButton($button);
-        $form->sendToPlayer($sender);
+        $form->sendToPlayer($player);
         return $form;
     }
     
