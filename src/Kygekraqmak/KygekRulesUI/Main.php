@@ -55,6 +55,7 @@ class Main extends PluginBase implements Listener {
                     return;
                 }
             break;
+        }
         return true;
     }
     
