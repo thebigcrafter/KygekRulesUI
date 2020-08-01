@@ -45,10 +45,10 @@ class Main extends PluginBase implements Listener {
         switch($cmd->getName()) {
             case "rules":
                 if(!$player instanceof Player) {
-                    $player->sendMessage("This command only works in game!");
+                    $player->sendMessage("[KygekRulesUI] This command only works in game!");
                 } else {
                     if(!$player->hasPermission("rules.command")) {
-                        $player->sendMessage("You do not have permission to use this command");
+                        $player->sendMessage("[KygekRulesUI] You do not have permission to use this command!");
                     } else {
                         $this->kygekRulesUI($player);
                     }
