@@ -23,8 +23,9 @@ author: Kygekraqmak
 commands:
     rules:
         description: Server rules in UI form
+        permission: rules.command
         usage: /rules
-        permissions:
-            rules.command:
-                description: Permission to use KygekRulesUI
-                default: true
+permissions:
+    rules.command:
+        description: Permission to use KygekRulesUI
+        default: true

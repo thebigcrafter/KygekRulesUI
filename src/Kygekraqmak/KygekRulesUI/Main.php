@@ -34,14 +34,14 @@ use jojoe77777\FormAPI;
 use jojoe77777\FormAPI\SimpleForm;
 
 class Main extends PluginBase implements Listener {
-    
+
     public function onEnable() {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         @mkdir($this->getDataFolder());
         $this->saveDefaultConfig();
         $this->getResource("config.yml");
     }
-    
+
     public function onCommand(CommandSender $player, Command $cmd, string $label, array $args) : bool {
         switch($cmd->getName()) {
             case "rules":
@@ -51,18 +51,19 @@ class Main extends PluginBase implements Listener {
                     if(!$player->hasPermission("rules.command")) {
                         $player->sendMessage("[KygekRulesUI] You do not have permission to use this command!");
                     } else {
+                        $this->getConfig()->reload();
                         $this->kygekRulesUI($player);
                     }
                 }
         }
         return true;
     }
-    
+
     public function kygekRulesUI($player) {
         $form = new SimpleForm(function (Player $player, int $data = null) {
             if($data === null){
                 return true;
-            }             
+            }
             switch($data){
                 case 0:
                 break;
@@ -77,5 +78,5 @@ class Main extends PluginBase implements Listener {
         $form->sendToPlayer($player);
         return $form;
     }
-    
+
 }
