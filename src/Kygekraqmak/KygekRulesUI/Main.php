@@ -42,17 +42,19 @@ class Main extends PluginBase implements Listener {
     }
     
     public function onCommand(CommandSender $player, Command $cmd, string $label, array $args) : bool {
-        if($player->hasPermission("rules.command")) {
-            if($cmd->getName() == "rules") {
+        switch($cmd->getName()) {
+            case "rules":
                 if(!$player instanceof Player) {
                     $player->sendMessage("This command only works in game!");
                 } else {
-                    $this->kygekRulesUI($player);
+                    if(!$player->hasPermission("rules.command")) {
+                        $player->sendMessage("You do not have permission to use this command");
+                    } else {
+                        $this->kygekRulesUI($player);
+                    }
+                    return;
                 }
-            }
-        } else {
-            $player->sendMessage("You do not have permission to use this command");
-        }
+            break;
         return true;
     }
     
