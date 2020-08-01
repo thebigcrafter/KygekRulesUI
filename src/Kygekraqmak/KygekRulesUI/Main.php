@@ -52,9 +52,7 @@ class Main extends PluginBase implements Listener {
                     } else {
                         $this->kygekRulesUI($player);
                     }
-                    return;
                 }
-            break;
         }
         return true;
     }
