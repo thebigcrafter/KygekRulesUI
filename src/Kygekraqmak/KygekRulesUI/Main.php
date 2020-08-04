@@ -38,17 +38,30 @@ class Main extends PluginBase implements Listener {
     public function onEnable() {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         @mkdir($this->getDataFolder());
-        $this->saveDefaultConfig();
-        $this->getResource("config.yml");
+        $this->saveResource("config.yml");
+        if (!$this->getConfig()->exists("config-version")) {
+			      $this->getLogger()->notice("§eYour configuration file is from another version. Updating the Config...");
+			      $this->getLogger()->notice("§eThe old configuration file can be found at config_old.yml");
+			      rename($this->getDataFolder()."config.yml", $this->getDataFolder()."config_old.yml");
+			      $this->saveResource("config.yml");
+			      return;
+		    }
+		    if (version_compare("1.1", $this->getConfig()->get("config-version"))) {
+            $this->getLogger()->notice("§eYour configuration file is from another version. Updating the Config...");
+			      $this->getLogger()->notice("§eThe old configuration file can be found at config_old.yml");
+			      rename($this->getDataFolder()."config.yml", $this->getDataFolder()."config_old.yml");
+			      $this->saveResource("config.yml");
+			      return;
+        }
     }
 
     public function onCommand(CommandSender $player, Command $cmd, string $label, array $args) : bool {
-        switch($cmd->getName()) {
+        switch ($cmd->getName()) {
             case "rules":
-                if(!$player instanceof Player) {
+                if (!$player instanceof Player) {
                     $player->sendMessage("[KygekRulesUI] This command only works in game!");
                 } else {
-                    if(!$player->hasPermission("rules.command")) {
+                    if (!$player->hasPermission("rules.command")) {
                         $player->sendMessage("[KygekRulesUI] You do not have permission to use this command!");
                     } else {
                         $this->getConfig()->reload();
@@ -61,10 +74,10 @@ class Main extends PluginBase implements Listener {
 
     public function kygekRulesUI($player) {
         $form = new SimpleForm(function (Player $player, int $data = null) {
-            if($data === null){
+            if ($data === null) {
                 return true;
             }
-            switch($data){
+            switch ($data) {
                 case 0:
                 break;
             }
