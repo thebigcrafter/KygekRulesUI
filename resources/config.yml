@@ -1,3 +1,4 @@
+---
 # KygekRulesUI plugin config
 # Created by Kygekraqmak
 
@@ -5,12 +6,15 @@
 # Use "§" as formatting codes
 # Use "\n" to break into a new line
 
+# DO NOT CHANGE THIS!
+config-version: 1.1
+
 # Set the KygekRulesUI title here:
 title: "KygekRulesUI"
 
 # Set the KygekRulesUI content here:
 content: "Change in config.yml!"
 
-# Seth the KygekRulesUI button here:
+# Set the KygekRulesUI button here:
 button: "Ok"
 ...
