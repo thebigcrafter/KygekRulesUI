@@ -2,7 +2,7 @@
 
 A plugin that will show your server rules in UI form. To open KygekRulesUI, simply type `/rules` in the chat.
 
-## Features
+# Features
 
 - Easy to use (you can set the `title`, `content` and `button` in the `config.yml`)
 - No need to restart, config will automatically get reloaded every time the `/rules` command gets executed!
@@ -11,7 +11,7 @@ A plugin that will show your server rules in UI form. To open KygekRulesUI, simp
 - Use `\n` to break into a new line
 - FormAPI plugin is not required
 
-## How to Download & Install
+# How to Download & Install
 
 1. Download the latest version (It is recommended to always download the latest version for the best experience, except you're having compatibility issues).
 2. Put the .phar file to the `plugins` folder.
@@ -20,12 +20,12 @@ A plugin that will show your server rules in UI form. To open KygekRulesUI, simp
 5. Join the server and type `/rules` in the player chat.
 6. Done!
 
-## Commands & Permissions
+# Commands & Permissions
 
 - Command: `/rules` (Change command feature will be available soon!)
 - Permission: `rules.command` (Default set to `true`, use `-rules.command` in PurePerms to blacklist the permission)
 
-## Support & Contact
+# Support & Contact
 
 - Join the Discord <a href="https://discord.gg/CXtqUZv">here</a> for latest updates from Kygekraqmak.
 - If you find bugs or want to give suggestions, please visit <a href="https://github.com/Kygekraqmak/KygekRulesUI/issues">here</a> or DM Kygekraqmak#6415 via Discord.
