@@ -18,7 +18,7 @@
 
 namespace Kygekraqmak\KygekRulesUI\commands;
 
-use pocketmine\command\{Command, CommandSender};
+use pocketmine\command\{Command, CommandSender, PluginIdentifiableCommand};
 use pocketmine\Server;
 use pocketmine\Player;
 
@@ -26,7 +26,7 @@ use jojoe77777\FormAPI;
 use jojoe77777\FormAPI\SimpleForm;
 use Kygekraqmak\KygekRulesUI\Main;
 
-abstract class Rules extends Command {
+class Rules extends Command {
 
   public function __construct($name, Main $plugin) {
     $this->main = $plugin;
@@ -36,10 +36,7 @@ abstract class Rules extends Command {
     $this->setAliases($config->get("command-aliases"));
   }
 
-  public function onCommand(CommandSender $player, Command $cmd, string $label, array $args) : bool {
-    switch ($cmd->getName()) {
-      case "rules":
-      case $this->main->getConfig()->get("command-aliases"):
+  public function onCommand(CommandSender $player, string $label, array $args) : bool {
       if (!$player instanceof Player) {
         $player->sendMessage("[KygekRulesUI] This command only works in game!");
       } else {
@@ -50,7 +47,6 @@ abstract class Rules extends Command {
           $this->main->kygekRulesUI($player);
         }
       }
-    }
     return true;
   }
 
