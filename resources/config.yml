@@ -7,7 +7,13 @@
 # Use "\n" to break into a new line
 
 # DO NOT CHANGE THIS!
-config-version: 1.1
+config-version: 1.2
+
+# Change the command description here:
+command-description: "Server rules in UI form"
+
+# Add command alises here (use [] to not add aliases):
+command-aliases: ["serverrules", "rulesui"]
 
 # Set the KygekRulesUI title here:
 title: "KygekRulesUI"
