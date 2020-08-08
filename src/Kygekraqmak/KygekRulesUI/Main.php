@@ -35,61 +35,71 @@ use jojoe77777\FormAPI\SimpleForm;
 
 class Main extends PluginBase implements Listener {
 
-    public function onEnable() {
-        $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        @mkdir($this->getDataFolder());
-        $this->saveResource("config.yml");
-        if (!$this->getConfig()->exists("config-version")) {
-			      $this->getLogger()->notice("§eYour configuration file is from another version. Updating the Config...");
-			      $this->getLogger()->notice("§eThe old configuration file can be found at config_old.yml");
-			      rename($this->getDataFolder()."config.yml", $this->getDataFolder()."config_old.yml");
-			      $this->saveResource("config.yml");
-			      return;
-		    }
-		    if (version_compare("1.1", $this->getConfig()->get("config-version"))) {
-            $this->getLogger()->notice("§eYour configuration file is from another version. Updating the Config...");
-			      $this->getLogger()->notice("§eThe old configuration file can be found at config_old.yml");
-			      rename($this->getDataFolder()."config.yml", $this->getDataFolder()."config_old.yml");
-			      $this->saveResource("config.yml");
-			      return;
-        }
-    }
+  public $plugin;
 
-    public function onCommand(CommandSender $player, Command $cmd, string $label, array $args) : bool {
-        switch ($cmd->getName()) {
-            case "rules":
-                if (!$player instanceof Player) {
-                    $player->sendMessage("[KygekRulesUI] This command only works in game!");
-                } else {
-                    if (!$player->hasPermission("rules.command")) {
-                        $player->sendMessage("[KygekRulesUI] You do not have permission to use this command!");
-                    } else {
-                        $this->getConfig()->reload();
-                        $this->kygekRulesUI($player);
-                    }
-                }
+  public function __construct($name, Plugin $plugin) {
+    $this->plugin = $plugin;
+    parent::__construct("rules");
+    $this->setDescription($this->getConfig()->get("command-description"));
+    $this->setPermission("rules.command");
+    $this->setAliases($this->getConfig()->get("command-aliases"));
+  }
+
+  public function onEnable() {
+    $this->getServer()->getPluginManager()->registerEvents($this, $this);
+    @mkdir($this->getDataFolder());
+    $this->saveResource("config.yml");
+    if (!$this->getConfig()->exists("config-version")) {
+      $this->getLogger()->notice("§eYour configuration file is from another version. Updating the Config...");
+      $this->getLogger()->notice("§eThe old configuration file can be found at config_old.yml");
+      rename($this->getDataFolder()."config.yml", $this->getDataFolder()."config_old.yml");
+      $this->saveResource("config.yml");
+      return;
+    }
+    if (version_compare("1.1", $this->getConfig()->get("config-version"))) {
+      $this->getLogger()->notice("§eYour configuration file is from another version. Updating the Config...");
+      $this->getLogger()->notice("§eThe old configuration file can be found at config_old.yml");
+      rename($this->getDataFolder()."config.yml", $this->getDataFolder()."config_old.yml");
+      $this->saveResource("config.yml");
+      return;
+    }
+  }
+
+  public function onCommand(CommandSender $player, Command $cmd, string $label, array $args) : bool {
+    switch ($cmd->getName()) {
+      case "rules":
+      if (!$player instanceof Player) {
+        $player->sendMessage("[KygekRulesUI] This command only works in game!");
+      } else {
+        if (!$player->hasPermission("rules.command")) {
+          $player->sendMessage("[KygekRulesUI] You do not have permission to use this command!");
+        } else {
+          $this->getConfig()->reload();
+          $this->kygekRulesUI($player);
         }
+      }
+    }
+    return true;
+  }
+
+  public function kygekRulesUI($player) {
+    $form = new SimpleForm(function (Player $player, int $data = null) {
+      if ($data === null) {
         return true;
-    }
-
-    public function kygekRulesUI($player) {
-        $form = new SimpleForm(function (Player $player, int $data = null) {
-            if ($data === null) {
-                return true;
-            }
-            switch ($data) {
-                case 0:
-                break;
-            }
-        });
-        $title = str_replace("{player}", $player->getName(), $this->getConfig()->get("title"));
-        $content = str_replace("{player}", $player->getName(), $this->getConfig()->get("content"));
-        $button = str_replace("{player}", $player->getName(), $this->getConfig()->get("button"));
-        $form->setTitle($title);
-        $form->setContent($content);
-        $form->addButton($button);
-        $form->sendToPlayer($player);
-        return $form;
-    }
+      }
+      switch ($data) {
+        case 0:
+        break;
+      }
+    });
+    $title = str_replace("{player}", $player->getName(), $this->getConfig()->get("title"));
+    $content = str_replace("{player}", $player->getName(), $this->getConfig()->get("content"));
+    $button = str_replace("{player}", $player->getName(), $this->getConfig()->get("button"));
+    $form->setTitle($title);
+    $form->setContent($content);
+    $form->addButton($button);
+    $form->sendToPlayer($player);
+    return $form;
+  }
 
 }
