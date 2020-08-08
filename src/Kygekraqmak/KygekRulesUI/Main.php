@@ -56,7 +56,7 @@ class Main extends PluginBase implements Listener {
       $this->saveResource("config.yml");
       return;
     }
-    if (version_compare("1.1", $this->getConfig()->get("config-version"))) {
+    if (version_compare("1.2", $this->getConfig()->get("config-version"))) {
       $this->getLogger()->notice("§eYour configuration file is from another version. Updating the Config...");
       $this->getLogger()->notice("§eThe old configuration file can be found at config_old.yml");
       rename($this->getDataFolder()."config.yml", $this->getDataFolder()."config_old.yml");
@@ -68,6 +68,7 @@ class Main extends PluginBase implements Listener {
   public function onCommand(CommandSender $player, Command $cmd, string $label, array $args) : bool {
     switch ($cmd->getName()) {
       case "rules":
+      case $this->getConfig()->get("command-aliases"):
       if (!$player instanceof Player) {
         $player->sendMessage("[KygekRulesUI] This command only works in game!");
       } else {
