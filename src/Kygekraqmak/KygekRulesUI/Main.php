@@ -25,10 +25,7 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\utils\TextFormat;
 use pocketmine\utils\Config;
-use pocketmine\command\Command;
-use pocketmine\command\CommandSender;
-use pocketmine\command\CommandExecutor;
-use pocketmine\command\ConsoleCommandSender;
+use pocketmine\command\{Command, CommandSender, CommandExecutor, ConsoleCommandSender, PluginIdentifiableCommand};
 
 use jojoe77777\FormAPI;
 use jojoe77777\FormAPI\SimpleForm;
