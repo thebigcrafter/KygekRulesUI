@@ -27,25 +27,17 @@ use pocketmine\utils\TextFormat;
 use pocketmine\utils\Config;
 use pocketmine\command\{Command, CommandSender, CommandExecutor, ConsoleCommandSender, PluginIdentifiableCommand};
 
+use Kygekraqmak\KygekRulesUI\commands\Rules;
 use jojoe77777\FormAPI;
 use jojoe77777\FormAPI\SimpleForm;
 
 class Main extends PluginBase implements Listener {
 
-  public $plugin;
-
-  public function __construct($name, Plugin $plugin) {
-    $this->plugin = $plugin;
-    parent::__construct("rules");
-    $this->setDescription($this->getConfig()->get("command-description"));
-    $this->setPermission("rules.command");
-    $this->setAliases($this->getConfig()->get("command-aliases"));
-  }
-
   public function onEnable() {
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
     @mkdir($this->getDataFolder());
     $this->saveResource("config.yml");
+    $this->getServer()->getCommandMap()->regsiter("rules", new Rules($this));
     if (!$this->getConfig()->exists("config-version")) {
       $this->getLogger()->notice("§eYour configuration file is from another version. Updating the Config...");
       $this->getLogger()->notice("§eThe old configuration file can be found at config_old.yml");
