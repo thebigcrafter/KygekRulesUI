@@ -20,11 +20,6 @@ api: 3.0.0
 version: 1.1.0
 author: Kygekraqmak
 
-commands:
-    rules:
-        description: Server rules in UI form
-        permission: rules.command
-        usage: /rules
 permissions:
     rules.command:
         description: Permission to use KygekRulesUI
