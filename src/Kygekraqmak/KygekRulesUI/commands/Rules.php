@@ -26,7 +26,7 @@ use jojoe77777\FormAPI;
 use jojoe77777\FormAPI\SimpleForm;
 use Kygekraqmak\KygekRulesUI\Main;
 
-class Rules extends Command {
+class Rules extends Command implements PluginIdentifiableCommand {
 
   public function __construct($name, Main $plugin) {
     $this->main = $plugin;
@@ -36,17 +36,18 @@ class Rules extends Command {
     $this->setAliases($config->get("command-aliases"));
   }
 
-  public function onCommand(CommandSender $player, string $label, array $args) : bool {
-      if (!$player instanceof Player) {
-        $player->sendMessage("[KygekRulesUI] This command only works in game!");
+  public function onCommand(CommandSender $player, string $label, array $args, Main $plugin) : bool {
+    $this->main = $plugin;
+    if (!$player instanceof Player) {
+      $player->sendMessage("[KygekRulesUI] This command only works in game!");
+    } else {
+      if (!$player->hasPermission("rules.command")) {
+        $player->sendMessage("[KygekRulesUI] You do not have permission to use this command!");
       } else {
-        if (!$player->hasPermission("rules.command")) {
-          $player->sendMessage("[KygekRulesUI] You do not have permission to use this command!");
-        } else {
-          $this->main->getConfig()->reload();
-          $this->main->kygekRulesUI($player);
-        }
+        $this->main->getConfig()->reload();
+        $this->main->kygekRulesUI($player);
       }
+    }
     return true;
   }
 
