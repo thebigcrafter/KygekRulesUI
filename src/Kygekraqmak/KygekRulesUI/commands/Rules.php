@@ -28,7 +28,7 @@ use Kygekraqmak\KygekRulesUI\Main;
 
 class Rules extends Command {
 
-  public function __construct($name, Main $plugin) {
+  public function __construct(Main $plugin) {
     $this->main = $plugin;
     $config = $this->main->getConfig();
     parent::__construct("rules");
@@ -37,14 +37,15 @@ class Rules extends Command {
   }
 
   public function execute(CommandSender $player, string $label, array $args) {
+    $main = new Main();
     if (!$player instanceof Player) {
       $player->sendMessage("[KygekRulesUI] This command only works in game!");
     } else {
       if (!$player->hasPermission("rules.command")) {
         $player->sendMessage("[KygekRulesUI] You do not have permission to use this command!");
       } else {
-        $this->main->getConfig()->reload();
-        $this->main->kygekRulesUI($player);
+        $main->getConfig()->reload();
+        $main->kygekRulesUI($player);
       }
     }
     return true;
