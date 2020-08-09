@@ -40,7 +40,7 @@ class Rules extends Command implements PluginIdentifiableCommand {
   }
 
   public function execute(CommandSender $player, string $label, array $args) {
-    var_dump(Main::getInstace());
+    var_dump(Main::getInstance());
     if (!$player instanceof Player) {
       $player->sendMessage("[KygekRulesUI] This command only works in game!");
     } else {
