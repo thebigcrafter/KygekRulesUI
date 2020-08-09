@@ -21,6 +21,7 @@ namespace Kygekraqmak\KygekRulesUI\commands;
 use pocketmine\command\{Command, CommandSender, PluginIdentifiableCommand};
 use pocketmine\Server;
 use pocketmine\Player;
+use pocketmine\plugin\Plugin;
 
 use jojoe77777\FormAPI;
 use jojoe77777\FormAPI\SimpleForm;
