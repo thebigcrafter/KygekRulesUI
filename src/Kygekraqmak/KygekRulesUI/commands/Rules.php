@@ -34,13 +34,13 @@ class Rules extends Command implements PluginIdentifiableCommand {
   }
 
   public function __construct() {
+    var_dump(Main::getInstance());
     parent::__construct("rules");
     $this->setDescription(Main::getInstance()->getConfig()->get("command-description"));
     $this->setAliases(Main::getInstance()->getConfig()->get("command-aliases"));
   }
 
   public function execute(CommandSender $player, string $label, array $args) {
-    var_dump(Main::getInstance());
     if (!$player instanceof Player) {
       $player->sendMessage("[KygekRulesUI] This command only works in game!");
     } else {
