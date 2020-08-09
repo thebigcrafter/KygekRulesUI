@@ -33,11 +33,15 @@ use jojoe77777\FormAPI\SimpleForm;
 
 class Main extends PluginBase implements Listener {
 
+  public static function getInstance() {
+    return $this;
+  }
+
   public function onEnable() {
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
     @mkdir($this->getDataFolder());
     $this->saveResource("config.yml");
-    $this->getServer()->getCommandMap()->regsiter("rules", new Rules($this));
+    $this->getServer()->getCommandMap()->regsiter("rules", new Rules());
     if (!$this->getConfig()->exists("config-version")) {
       $this->getLogger()->notice("§eYour configuration file is from another version. Updating the Config...");
       $this->getLogger()->notice("§eThe old configuration file can be found at config_old.yml");
