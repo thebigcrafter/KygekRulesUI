@@ -28,6 +28,10 @@ use Kygekraqmak\KygekRulesUI\Main;
 
 class Rules extends Command implements PluginIdentifiableCommand {
 
+  public function getPlugin() : Plugin{
+    return Main::getInstance();
+  }
+
   public function __construct() {
     $config = Main::getInstance()->getConfig();
     parent::__construct("rules");
