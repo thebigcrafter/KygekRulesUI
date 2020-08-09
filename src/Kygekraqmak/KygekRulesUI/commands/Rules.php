@@ -34,10 +34,9 @@ class Rules extends Command implements PluginIdentifiableCommand {
   }
 
   public function __construct() {
-    $config = Main::getInstance()->getConfig();
     parent::__construct("rules");
-    $this->setDescription($config->get("command-description"));
-    $this->setAliases($config->getConfig()->get("command-aliases"));
+    $this->setDescription(Main::getInstance()->getConfig()->get("command-description"));
+    $this->setAliases(Main::getInstance()->getConfig()->get("command-aliases"));
   }
 
   public function execute(CommandSender $player, string $label, array $args) {
