@@ -36,7 +36,7 @@ class Rules extends Command implements PluginIdentifiableCommand {
     $this->setAliases($config->get("command-aliases"));
   }
 
-  public function onCommand(CommandSender $player, string $label, array $args, Main $plugin) : bool {
+  public function execute(CommandSender $player, string $label, array $args, Main $plugin) : bool {
     $this->main = $plugin;
     if (!$player instanceof Player) {
       $player->sendMessage("[KygekRulesUI] This command only works in game!");
