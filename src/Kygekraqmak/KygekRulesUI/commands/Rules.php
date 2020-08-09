@@ -26,7 +26,7 @@ use jojoe77777\FormAPI;
 use jojoe77777\FormAPI\SimpleForm;
 use Kygekraqmak\KygekRulesUI\Main;
 
-class Rules extends Command implements PluginIdentifiableCommand {
+class Rules extends Command {
 
   public function __construct($name, Main $plugin) {
     $this->main = $plugin;
