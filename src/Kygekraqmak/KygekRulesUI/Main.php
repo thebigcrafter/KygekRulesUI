@@ -35,10 +35,6 @@ class Main extends PluginBase implements Listener {
 
   private static $instance;
 
-  public static function getInstance() {
-    return self::$instance;
-  }
-
   public function onEnable() {
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
     @mkdir($this->getDataFolder());
@@ -59,6 +55,10 @@ class Main extends PluginBase implements Listener {
       $this->saveResource("config.yml");
       return;
     }
+  }
+
+  public static function getInstance() {
+    return self::$instance;
   }
 
   public function kygekRulesUI($player) {
