@@ -29,7 +29,7 @@ use Kygekraqmak\KygekRulesUI\Main;
 
 class Rules extends Command implements PluginIdentifiableCommand {
   
-  private $plugin
+  private $plugin;
 
   public function getPlugin() : Plugin{
     return $this->plugin;
