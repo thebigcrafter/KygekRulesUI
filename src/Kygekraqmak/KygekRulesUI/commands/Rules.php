@@ -28,16 +28,18 @@ use jojoe77777\FormAPI\SimpleForm;
 use Kygekraqmak\KygekRulesUI\Main;
 
 class Rules extends Command implements PluginIdentifiableCommand {
+  
+  private $plugin;
 
   public function getPlugin() : Plugin{
-    return Main::getInstance();
+    return $this->plugin;
   }
 
-  public function __construct() {
-    var_dump(Main::getInstance());
+  public function __construct(Main $plugin) {
+    $this->plugin = $plugin;
     parent::__construct("rules");
-    $this->setDescription(Main::getInstance()->getConfig()->get("command-description"));
-    $this->setAliases(Main::getInstance()->getConfig()->get("command-aliases"));
+    $this->setDescription($this->plugin->getConfig()->get("command-description"));
+    $this->setAliases($this->plugin->getConfig()->get("command-aliases"));
   }
 
   public function execute(CommandSender $player, string $label, array $args) {
@@ -47,8 +49,8 @@ class Rules extends Command implements PluginIdentifiableCommand {
       if (!$player->hasPermission("rules.command")) {
         $player->sendMessage("[KygekRulesUI] You do not have permission to use this command!");
       } else {
-        Main::getInstance()->getConfig()->reload();
-        Main::getInstance()->kygekRulesUI($player);
+        $this->plugin->getConfig()->reload();
+        $this->plugin->kygekRulesUI($player);
       }
     }
     return true;
