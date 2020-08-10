@@ -1,10 +1,9 @@
 # KygekRulesUI
 
 [![](https://poggit.pmmp.io/shield.state/KygekRulesUI)](https://poggit.pmmp.io/p/KygekRulesUI)
-<a href="https://poggit.pmmp.io/p/KygekRulesUI"><img src="https://poggit.pmmp.io/shield.state/KygekRulesUI"></a>[![](https://poggit.pmmp.io/shield.api/KygekRulesUI)](https://poggit.pmmp.io/p/KygekRulesUI)
-<a href="https://poggit.pmmp.io/p/KygekRulesUI"><img src="https://poggit.pmmp.io/shield.api/KygekRulesUI"></a>[![](https://poggit.pmmp.io/shield.dl.total/KygekRulesUI)](https://poggit.pmmp.io/p/KygekRulesUI)
-<a href="https://poggit.pmmp.io/p/KygekRulesUI"><img src="https://poggit.pmmp.io/shield.dl.total/KygekRulesUI"></a>[![](https://poggit.pmmp.io/shield.dl/KygekRulesUI)](https://poggit.pmmp.io/p/KygekRulesUI)
-<a href="https://poggit.pmmp.io/p/KygekRulesUI"><img src="https://poggit.pmmp.io/shield.dl/KygekRulesUI"></a>
+[![](https://poggit.pmmp.io/shield.api/KygekRulesUI)](https://poggit.pmmp.io/p/KygekRulesUI)
+[![](https://poggit.pmmp.io/shield.dl.total/KygekRulesUI)](https://poggit.pmmp.io/p/KygekRulesUI)
+[![](https://poggit.pmmp.io/shield.dl/KygekRulesUI)](https://poggit.pmmp.io/p/KygekRulesUI)
 
 A plugin that will show your server rules in UI form. To open KygekRulesUI, simply type `/rules` in the chat.
 
