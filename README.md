@@ -10,6 +10,7 @@ A plugin that will show your server rules in UI form. To open KygekRulesUI, simp
 - Use `§` as formatting codes
 - Use `\n` to break into a new line
 - FormAPI plugin is not required
+- Automatic plugin update checker on server startup
 
 # How to Install
 
@@ -22,10 +23,19 @@ A plugin that will show your server rules in UI form. To open KygekRulesUI, simp
 
 # Commands & Permissions
 
-- Command: `/rules` (Change command feature will be available soon!)
-- Permission: `rules.command` (Default set to `true`, use `-rules.command` in PurePerms to blacklist the permission)
+| Command | Default Description | Permission | Default |
+| --- | --- | --- | --- |
+| `/rules` | Server rules in UI form | `rules.command` | true |
+
+Command description can be changed in `config.yml`. You can also add command aliases in `config.yml`.  
+Use `-rules.command` to blacklist the `/rules` command permission to groups/users in PurePerms.
+
+# Upcoming Features
+
+- Currently none planned. You can contribute or suggest for new features.
 
 # Additional Notes
 
 - Join the Discord <a href="https://discord.gg/CXtqUZv">here</a> for latest updates from Kygekraqmak.
-- If you find bugs or want to give suggestions, please visit <a href="https://github.com/Kygekraqmak/KygekRulesUI/issues">here</a> or DM Kygekraqmak#6415 via Discord.
+- If you found bugs or want to give suggestions, please visit <a href="https://github.com/Kygekraqmak/KygekRulesUI/issues">here</a> or DM KygekDev#6415 via Discord.
+- We accept any contributions! If you want to contribute please make a pull request in <a href="https://github.com/Kygekraqmak/KygekRulesUI/pulls">here</a>.
