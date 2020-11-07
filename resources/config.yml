@@ -6,8 +6,19 @@
 # Use "§" as formatting codes
 # Use "\n" to break into a new line
 
-# DO NOT CHANGE THIS!
+##### DANGER ZONE #####
+# Do not change this (Only for internal use)!
 config-version: 1.1
+#######################
+
+##### COMMAND SETTINGS #####
+# Change the command description that will be shown in help pages and command suggestions
+# Leave empty to use the default command description
+command-desc: ""
+# Add command aliases for /rules command (Leave empty if you don't want to add command aliases)
+# Do not use "/" in front of the commands!
+command-aliases: []
+#############################
 
 # Set the KygekRulesUI title here:
 title: "KygekRulesUI"

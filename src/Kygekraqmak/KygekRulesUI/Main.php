@@ -18,20 +18,10 @@
 
 namespace Kygekraqmak\KygekRulesUI;
 
-use pocketmine\Server;
+use jojoe77777\FormAPI\SimpleForm;
 use pocketmine\Player;
-use pocketmine\plugin\Plugin;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
-use pocketmine\utils\TextFormat;
-use pocketmine\utils\Config;
-use pocketmine\command\Command;
-use pocketmine\command\CommandSender;
-use pocketmine\command\CommandExecutor;
-use pocketmine\command\ConsoleCommandSender;
-
-use jojoe77777\FormAPI;
-use jojoe77777\FormAPI\SimpleForm;
 
 class Main extends PluginBase implements Listener {
 
@@ -39,47 +29,22 @@ class Main extends PluginBase implements Listener {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         @mkdir($this->getDataFolder());
         $this->saveResource("config.yml");
-        if (!$this->getConfig()->exists("config-version")) {
-			      $this->getLogger()->notice("§eYour configuration file is from another version. Updating the Config...");
-			      $this->getLogger()->notice("§eThe old configuration file can be found at config_old.yml");
-			      rename($this->getDataFolder()."config.yml", $this->getDataFolder()."config_old.yml");
-			      $this->saveResource("config.yml");
-			      return;
-		    }
-		    if (version_compare("1.1", $this->getConfig()->get("config-version"))) {
-            $this->getLogger()->notice("§eYour configuration file is from another version. Updating the Config...");
-			      $this->getLogger()->notice("§eThe old configuration file can be found at config_old.yml");
-			      rename($this->getDataFolder()."config.yml", $this->getDataFolder()."config_old.yml");
-			      $this->saveResource("config.yml");
-			      return;
+        if ($this->getConfig()->get("config-version") !== 1.3) {
+            $this->getLogger()->notice("Your configuration file is outdated, updating the config.yml...");
+            $this->getLogger()->notice("The old configuration file can be found at config_old.yml");
+            rename($this->getDataFolder()."config.yml", $this->getDataFolder()."config_old.yml");
+            $this->saveResource("config.yml");
         }
+        $this->getServer()->getCommandMap()->register("KygekRulesUI", new Commands(
+            $this, $this->getConfig()->get("command-desc"),
+            $this->getConfig()->get("command-aliases")
+        ));
     }
 
-    public function onCommand(CommandSender $player, Command $cmd, string $label, array $args) : bool {
-        switch ($cmd->getName()) {
-            case "rules":
-                if (!$player instanceof Player) {
-                    $player->sendMessage("[KygekRulesUI] This command only works in game!");
-                } else {
-                    if (!$player->hasPermission("rules.command")) {
-                        $player->sendMessage("[KygekRulesUI] You do not have permission to use this command!");
-                    } else {
-                        $this->getConfig()->reload();
-                        $this->kygekRulesUI($player);
-                    }
-                }
-        }
-        return true;
-    }
-
-    public function kygekRulesUI($player) {
+    public function kygekRulesUI(Player $player) {
         $form = new SimpleForm(function (Player $player, int $data = null) {
             if ($data === null) {
                 return true;
-            }
-            switch ($data) {
-                case 0:
-                break;
             }
         });
         $title = str_replace("{player}", $player->getName(), $this->getConfig()->get("title"));
@@ -88,8 +53,7 @@ class Main extends PluginBase implements Listener {
         $form->setTitle($title);
         $form->setContent($content);
         $form->addButton($button);
-        $form->sendToPlayer($player);
-        return $form;
+        $player->sendForm($form);
     }
 
 }
