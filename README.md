@@ -25,10 +25,10 @@ A plugin that will show your server rules in UI form. To open KygekRulesUI, simp
 
 | Command | Default Description | Permission | Default |
 | --- | --- | --- | --- |
-| `/rules` | Server rules in UI form | `rules.command` | true |
+| `/rules` | Server rules in UI form | `kygekrulesui.rules` | true |
 
 Command description can be changed in `config.yml`. You can also add command aliases in `config.yml`.  
-Use `-rules.command` to blacklist the `/rules` command permission to groups/users in PurePerms.
+Use `-kygekrulesui.rules` to blacklist the `/rules` command permission to groups/users in PurePerms.
 
 # Upcoming Features
 

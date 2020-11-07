@@ -29,7 +29,7 @@ class Commands extends PluginCommand {
     public function __construct(Main $main, string $desc, array $aliases) {
         $this->main = $main;
         parent::__construct("rules", $main);
-        $this->setPermission("rules.command");
+        $this->setPermission("kygekrulesui.rules");
         $this->setAliases($aliases);
         $this->setUsage("/rules");
         $this->setDescription((empty($desc)) ? "Server rules in UI form" : $desc);
@@ -43,7 +43,7 @@ class Commands extends PluginCommand {
         if (!$sender instanceof Player) {
             $sender->sendMessage("[KygekRulesUI] This command only works in game!");
         } else {
-            if (!$sender->hasPermission("rules.command")) {
+            if (!$sender->hasPermission("kygekrulesui.rules")) {
                 $sender->sendMessage("[KygekRulesUI] You do not have permission to use this command!");
             } else {
                 $this->getMain()->getConfig()->reload();
