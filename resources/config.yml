@@ -28,4 +28,7 @@ content: "Change in config.yml!"
 
 # Set the KygekRulesUI button here:
 button: "Ok"
+
+# Whether to check for plugin updates (Recommended)
+check-updates: true
 ...

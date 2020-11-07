@@ -18,6 +18,7 @@
 
 namespace Kygekraqmak\KygekRulesUI;
 
+use JackMD\UpdateNotifier\UpdateNotifier;
 use jojoe77777\FormAPI\SimpleForm;
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
@@ -39,6 +40,9 @@ class Main extends PluginBase implements Listener {
             $this, $this->getConfig()->get("command-desc"),
             $this->getConfig()->get("command-aliases")
         ));
+        if ($this->getConfig()->get("check-updates", true)) {
+            UpdateNotifier::checkUpdate($this->getDescription()->getName(), $this->getDescription()->getVersion());
+        }
     }
 
     public function kygekRulesUI(Player $player) {
