@@ -9,6 +9,8 @@ A plugin that will show your server rules in UI form. To open KygekRulesUI, simp
 - Use `{player}` to display player name
 - Use `§` as formatting codes
 - Use `\n` to break into a new line
+- Change command description to suit your server
+- Supports command aliases
 - FormAPI plugin is not required
 - Automatic plugin update checker on server startup
 
