@@ -38,6 +38,6 @@ Use `-kygekrulesui.rules` to blacklist the `/rules` command permission to groups
 
 # Additional Notes
 
-- Join the Discord <a href="https://discord.gg/CXtqUZv">here</a> for latest updates from Kygekraqmak.
-- If you found bugs or want to give suggestions, please visit <a href="https://github.com/Kygekraqmak/KygekRulesUI/issues">here</a> or DM KygekDev#6415 via Discord.
-- We accept any contributions! If you want to contribute please make a pull request in <a href="https://github.com/Kygekraqmak/KygekRulesUI/pulls">here</a>.
+- Join the Discord <a href="https://discord.gg/CXtqUZv">here</a> for latest updates from KygekTeam.
+- If you found bugs or want to give suggestions, please visit <a href="https://github.com/KygekTeam/KygekRulesUI/issues">here</a> or DM KygekDev#6415 via Discord.
+- We accept any contributions! If you want to contribute please make a pull request in <a href="https://github.com/KygekTeam/KygekRulesUI/pulls">here</a>.
