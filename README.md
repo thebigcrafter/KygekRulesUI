@@ -1,5 +1,8 @@
 # KygekRulesUI
 
+[![Poggit](https://poggit.pmmp.io/shield.dl.total/KygekRulesUI)](https://poggit.pmmp.io/p/KygekRulesUI)
+[![Discord](https://img.shields.io/discord/735439472992321587.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/CXtqUZv)
+
 A plugin that will show your server rules in UI form. To open KygekRulesUI, simply type `/rules` in the chat.
 
 # Features
@@ -41,3 +44,7 @@ Use `-kygekrulesui.rules` to blacklist the `/rules` command permission to groups
 - Join the Discord <a href="https://discord.gg/CXtqUZv">here</a> for latest updates from KygekTeam.
 - If you found bugs or want to give suggestions, please visit <a href="https://github.com/KygekTeam/KygekRulesUI/issues">here</a> or DM KygekDev#6415 via Discord.
 - We accept any contributions! If you want to contribute please make a pull request in <a href="https://github.com/KygekTeam/KygekRulesUI/pulls">here</a>.
+
+# Other Versions
+
+- [Nukkit](https://github.com/KygekTeam/KygekRulesUI-Nukkit)
