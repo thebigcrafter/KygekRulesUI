@@ -3,6 +3,8 @@
 [![Poggit](https://poggit.pmmp.io/shield.dl.total/KygekRulesUI)](https://poggit.pmmp.io/p/KygekRulesUI)
 [![Discord](https://img.shields.io/discord/735439472992321587.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/CXtqUZv)
 
+**PM4 BRANCH WARNING: This plugin branch is currently under development. There might be some major bugs. If you found one, please [submit an issue](https://github.com/KygekTeam/KygekRulesUI/issues).**
+
 A plugin that will show your server rules in UI form. To open KygekRulesUI, simply type `/rules` in the chat.
 
 # Features
