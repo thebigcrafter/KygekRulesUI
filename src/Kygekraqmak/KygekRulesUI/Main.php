@@ -20,13 +20,13 @@ namespace Kygekraqmak\KygekRulesUI;
 
 use JackMD\UpdateNotifier\UpdateNotifier;
 use jojoe77777\FormAPI\SimpleForm;
-use pocketmine\Player;
+use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 
 class Main extends PluginBase implements Listener {
 
-    public function onEnable() {
+    public function onEnable() : void {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         @mkdir($this->getDataFolder());
         $this->saveResource("config.yml");
