@@ -26,10 +26,18 @@ use pocketmine\event\Listener;
 
 class Main extends PluginBase implements Listener {
 
+    private const IS_DEV = true;
+
     public function onEnable() : void {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         @mkdir($this->getDataFolder());
         $this->saveResource("config.yml");
+
+        /** @phpstan-ignore-next-line */
+        if (self::IS_DEV) {
+            $this->getLogger()->warning("This plugin is running on a development version. There might be some major bugs. If you found one, please submit an issue in https://github.com/KygekTeam/KygekJoinUI/issues.");
+        }
+
         $this->getServer()->getCommandMap()->register("KygekRulesUI", new Commands(
             $this, $this->getConfig()->get("command-desc"),
             $this->getConfig()->get("command-aliases")
