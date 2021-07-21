@@ -2,12 +2,13 @@
 build-by-default: true
 branches:
 - stable
+- pm4
 projects:
   KygekRulesUI:
     path: ""
     libs:
-    - src: jojoe77777/FormAPI/libFormAPI
-      version: ^1.3
+    - src: Vecnavium/FormAPI/libFormAPI
+      version: 1.4.0-alpha
     - src: JackMD/UpdateNotifier/UpdateNotifier
       version: ^2.1
 ...
