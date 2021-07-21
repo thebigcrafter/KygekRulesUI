@@ -18,21 +18,19 @@
 
 namespace Kygekraqmak\KygekRulesUI;
 
+use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
-use pocketmine\command\PluginCommand;
 use pocketmine\player\Player;
 
-class Commands extends PluginCommand {
+class Commands extends Command {
 
     private $main;
 
     public function __construct(Main $main, string $desc, array $aliases) {
         $this->main = $main;
-        parent::__construct("rules", $main);
+        $desc = empty($desc) ? "Server rules in UI form" : $desc;
+        parent::__construct("rules", $desc, "/rules", $aliases);
         $this->setPermission("kygekrulesui.rules");
-        $this->setAliases($aliases);
-        $this->setUsage("/rules");
-        $this->setDescription((empty($desc)) ? "Server rules in UI form" : $desc);
     }
 
     public function getMain() : Main {
