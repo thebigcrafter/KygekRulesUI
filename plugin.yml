@@ -17,6 +17,8 @@
 name: KygekRulesUI
 main: Kygekraqmak\KygekRulesUI\Main
 api: 4.0.0
+extensions:
+  Core: ">=7.4"
 version: 2.0.0-ALPHA
 authors: [Kygekraqmak, KygekTeam]
 

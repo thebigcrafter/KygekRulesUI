@@ -24,7 +24,7 @@ use pocketmine\player\Player;
 
 class Commands extends Command {
 
-    private $main;
+    private Main $main;
 
     public function __construct(Main $main, string $desc, array $aliases) {
         $this->main = $main;
