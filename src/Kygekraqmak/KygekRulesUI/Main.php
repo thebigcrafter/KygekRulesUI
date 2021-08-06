@@ -1,7 +1,7 @@
 <?php
 
 # A plugin for PocketMine-MP that will show rules of a server in an UI form.
-# Copyright (C) 2020 Kygekraqmak
+# Copyright (C) 2020-2021 Kygekraqmak
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
