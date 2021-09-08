@@ -18,11 +18,11 @@
 
 namespace Kygekraqmak\KygekRulesUI;
 
-use jojoe77777\FormAPI\SimpleForm;
 use KygekTeam\KtpmplCfs\KtpmplCfs;
 use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
+use Vecnavium\FormsUI\SimpleForm;
 
 class Main extends PluginBase implements Listener {
 
