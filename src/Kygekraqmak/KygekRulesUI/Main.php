@@ -43,7 +43,7 @@ class Main extends PluginBase implements Listener {
             $this->getConfig()->get("command-aliases")
         ));
         KtpmplCfs::checkUpdates($this);
-        KtpmplCfs::checkConfig($this, "2.0-ALPHA");
+        KtpmplCfs::checkConfig($this, "2.0");
     }
 
     public function kygekRulesUI(Player $player) {
