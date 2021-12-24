@@ -17,10 +17,10 @@
 name: KygekRulesUI
 main: Kygekraqmak\KygekRulesUI\Main
 api: 4.0.0
-extensions:
-  Core: ">=8.0"
-version: 2.0.0-BETA
+version: 2.0.0
 authors: [Kygekraqmak, KygekTeam]
+description: Shows server rules in UI form
+website: https://github.com/KygekTeam/KygekRulesUI
 
 permissions:
   kygekrulesui.rules:

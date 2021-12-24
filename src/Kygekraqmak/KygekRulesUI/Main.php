@@ -26,7 +26,7 @@ use Vecnavium\FormsUI\SimpleForm;
 
 class Main extends PluginBase implements Listener {
 
-    private const IS_DEV = true;
+    private const IS_DEV = false;
 
     public function onEnable() : void {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
