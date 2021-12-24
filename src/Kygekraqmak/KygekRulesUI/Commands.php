@@ -21,8 +21,9 @@ namespace Kygekraqmak\KygekRulesUI;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
+use pocketmine\plugin\PluginOwned;
 
-class Commands extends Command {
+class Commands extends Command implements PluginOwned {
 
     private Main $main;
 
@@ -33,10 +34,6 @@ class Commands extends Command {
         $this->setPermission("kygekrulesui.rules");
     }
 
-    public function getMain() : Main {
-        return $this->main;
-    }
-
     public function execute(CommandSender $sender, string $commandLabel, array $args) : bool {
         if (!$sender instanceof Player) {
             $sender->sendMessage("[KygekRulesUI] This command only works in game!");
@@ -44,11 +41,15 @@ class Commands extends Command {
             if (!$sender->hasPermission("kygekrulesui.rules")) {
                 $sender->sendMessage("[KygekRulesUI] You do not have permission to use this command!");
             } else {
-                $this->getMain()->getConfig()->reload();
-                $this->getMain()->kygekRulesUI($sender);
+                $this->getOwningPlugin()->getConfig()->reload();
+                $this->getOwningPlugin()->kygekRulesUI($sender);
             }
         }
         return true;
+    }
+
+    public function getOwningPlugin() : Main {
+        return $this->main;
     }
 
 }
