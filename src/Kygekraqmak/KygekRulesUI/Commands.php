@@ -22,6 +22,7 @@ use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
 use pocketmine\plugin\PluginOwned;
+use pocketmine\utils\TextFormat;
 
 class Commands extends Command implements PluginOwned {
 
@@ -36,10 +37,10 @@ class Commands extends Command implements PluginOwned {
 
     public function execute(CommandSender $sender, string $commandLabel, array $args) : bool {
         if (!$sender instanceof Player) {
-            $sender->sendMessage("[KygekRulesUI] This command only works in game!");
+            $sender->sendMessage(TextFormat::RED . "[KygekRulesUI] This command only works in game!");
         } else {
-            if (!$sender->hasPermission("kygekrulesui.rules")) {
-                $sender->sendMessage("[KygekRulesUI] You do not have permission to use this command!");
+            if (!$this->testPermissionSilent($sender)) {
+                $sender->sendMessage(TextFormat::RED . "[KygekRulesUI] You do not have permission to use this command!");
             } else {
                 $this->getOwningPlugin()->getConfig()->reload();
                 $this->getOwningPlugin()->kygekRulesUI($sender);

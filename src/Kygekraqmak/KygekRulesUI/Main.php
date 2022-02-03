@@ -21,29 +21,29 @@ namespace Kygekraqmak\KygekRulesUI;
 use KygekTeam\KtpmplCfs\KtpmplCfs;
 use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
-use pocketmine\event\Listener;
+use pocketmine\utils\TextFormat;
 use Vecnavium\FormsUI\SimpleForm;
 
-class Main extends PluginBase implements Listener {
+class Main extends PluginBase {
 
     private const IS_DEV = false;
 
     public function onEnable() : void {
-        $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        @mkdir($this->getDataFolder());
-        $this->saveResource("config.yml");
+        $this->saveDefaultConfig();
+        $ktpmplcfs = new KtpmplCfs($this);
 
         /** @phpstan-ignore-next-line */
         if (self::IS_DEV) {
-            $this->getLogger()->warning("This plugin is running on a development version. There might be some major bugs. If you found one, please submit an issue in https://github.com/KygekTeam/KygekRulesUI/issues.");
+            $ktpmplcfs->warnDevelopmentVersion();
         }
 
         $this->getServer()->getCommandMap()->register("KygekRulesUI", new Commands(
             $this, $this->getConfig()->get("command-desc"),
             $this->getConfig()->get("command-aliases")
         ));
-        KtpmplCfs::checkUpdates($this);
-        KtpmplCfs::checkConfig($this, "2.1");
+
+        $ktpmplcfs->checkUpdates();
+        $ktpmplcfs->checkConfig("2.1");
     }
 
     public function kygekRulesUI(Player $player) {
@@ -52,9 +52,9 @@ class Main extends PluginBase implements Listener {
                 return true;
             }
         });
-        $title = str_replace("{player}", $player->getName(), $this->getConfig()->get("title"));
-        $content = str_replace("{player}", $player->getName(), $this->getConfig()->get("content"));
-        $button = str_replace("{player}", $player->getName(), $this->getConfig()->get("button"));
+        $title = str_replace("{player}", $player->getName(), TextFormat::colorize($this->getConfig()->get("title")));
+        $content = str_replace("{player}", $player->getName(), TextFormat::colorize($this->getConfig()->get("content")));
+        $button = str_replace("{player}", $player->getName(), TextFormat::colorize($this->getConfig()->get("button")));
         $form->setTitle($title);
         $form->setContent($content);
         $form->addButton($button);
