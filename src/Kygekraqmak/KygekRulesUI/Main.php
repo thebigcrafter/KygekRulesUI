@@ -1,7 +1,7 @@
 <?php
 
 # A plugin for PocketMine-MP that will show rules of a server in an UI form.
-# Copyright (C) 2020-2021 Kygekraqmak, KygekTeam
+# Copyright (C) 2020-2022 Kygekraqmak, KygekTeam
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -43,7 +43,7 @@ class Main extends PluginBase implements Listener {
             $this->getConfig()->get("command-aliases")
         ));
         KtpmplCfs::checkUpdates($this);
-        KtpmplCfs::checkConfig($this, "2.0");
+        KtpmplCfs::checkConfig($this, "2.1");
     }
 
     public function kygekRulesUI(Player $player) {
