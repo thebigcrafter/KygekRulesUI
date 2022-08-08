@@ -1,13 +1,16 @@
-# KygekRulesUI
+<h1 align="center">KygekRulesUI</h1>
 
-[![Poggit](https://poggit.pmmp.io/shield.dl.total/KygekRulesUI)](https://poggit.pmmp.io/p/KygekRulesUI)
-[![Discord](https://img.shields.io/discord/735439472992321587.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/CXtqUZv)
+<p align="center">
+<a href="https://poggit.pmmp.io/p/KygekRulesUI"><img src="https://poggit.pmmp.io/shield.dl.total/KygekRulesUI?style=for-the-badge" alt="poggit" /></a>
+<a href="https://github.com/thebigcrafter/KygekRulesUI/blob/main/LICENSE"><img src="https://img.shields.io/github/license/thebigcrafter/KygekRulesUI?style=for-the-badge" alt="license" /></a>
+<a href="https://discord.gg/cEXW8uK6QA"><img src="https://img.shields.io/discord/970294579372912700?color=7289DA&label=discord&logo=discord&style=for-the-badge" alt="discord" /></a>
+</p>
 
-**NOTICE:** This plugin branch is for PocketMine-MP 4. If you are looking for the PocketMine-MP 3 version of this plugin, please visit the [stable](https://github.com/KygekTeam/KygekRulesUI/tree/stable) branch.
+# 📖 About
 
 A plugin that will show your server rules in UI form. To open KygekRulesUI, simply type `/rules` in the chat.
 
-# Features
+# 🧩 Features
 
 - Easy to use (you can set the `title`, `content` and `button` in the `config.yml`)
 - No need to restart, config will automatically get reloaded every time the `/rules` command gets executed!
@@ -19,7 +22,7 @@ A plugin that will show your server rules in UI form. To open KygekRulesUI, simp
 - FormAPI plugin is not required
 - Automatic plugin update checker on server startup
 
-# How to Install
+# ⬇️ Installation
 
 1. Download the latest version (It is recommended to always download the latest version for the best experience, except you're having compatibility issues).
 2. Put the .phar file to the `plugins` folder.
@@ -28,25 +31,20 @@ A plugin that will show your server rules in UI form. To open KygekRulesUI, simp
 5. Join the server and type `/rules` in the player chat.
 6. Done!
 
-# Commands & Permissions
+# 📜 Commands & Permissions
 
 | Command | Default Description | Permission | Default |
 | --- | --- | --- | --- |
 | `/rules` | Server rules in UI form | `kygekrulesui.rules` | true |
 
-Command description can be changed in `config.yml`. You can also add command aliases in `config.yml`.  
-Use `-kygekrulesui.rules` to blacklist the `/rules` command permission to groups/users in PurePerms.
+💡 Tips:
+- Command description can be changed in `config.yml`. You can also add command aliases in `config.yml`.  
+- Use `-kygekrulesui.rules` to blacklist the `/rules` command permission to groups/users in PurePerms.
 
-# Upcoming Features
-
-- Currently none planned. You can contribute or suggest for new features.
-
-# Additional Notes
-
-- Join the Discord <a href="https://discord.gg/CXtqUZv">here</a> for latest updates from KygekTeam.
-- If you found bugs or want to give suggestions, please visit <a href="https://github.com/KygekTeam/KygekRulesUI/issues">here</a> or join our Discord server.
-- We accept all contributions! If you want to contribute please make a pull request in <a href="https://github.com/KygekTeam/KygekRulesUI/pulls">here</a>.
-
-# Other Versions
+# 🚢 Other Versions
 
 - [Nukkit](https://github.com/KygekTeam/KygekRulesUI-Nukkit)
+
+# ⚖️ License
+
+Licensed under the [GNU General Public License v3.0](https://github.com/thebigcrafter/KygekRulesUI/blob/main/LICENSE) license.
