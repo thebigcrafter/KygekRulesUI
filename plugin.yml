@@ -1,5 +1,5 @@
 # A plugin for PocketMine-MP that will show rules of a server in an UI form.
-# Copyright (C) 2020 Kygekraqmak
+# Copyright (C) 2020-2021 Kygekraqmak
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,10 +17,10 @@
 name: KygekRulesUI
 main: Kygekraqmak\KygekRulesUI\Main
 api: 3.0.0
-version: 1.2.0
+version: 1.3.0
 author: Kygekraqmak
 
 permissions:
-    rules.command:
-        description: Permission to use KygekRulesUI
-        default: true
+  kygekrulesui.rules:
+    description: Permission to use KygekRulesUI
+    default: true

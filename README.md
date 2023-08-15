@@ -1,9 +1,7 @@
 # KygekRulesUI
 
-[![](https://poggit.pmmp.io/shield.state/KygekRulesUI)](https://poggit.pmmp.io/p/KygekRulesUI)
-[![](https://poggit.pmmp.io/shield.api/KygekRulesUI)](https://poggit.pmmp.io/p/KygekRulesUI)
-[![](https://poggit.pmmp.io/shield.dl.total/KygekRulesUI)](https://poggit.pmmp.io/p/KygekRulesUI)
-[![](https://poggit.pmmp.io/shield.dl/KygekRulesUI)](https://poggit.pmmp.io/p/KygekRulesUI)
+[![Poggit](https://poggit.pmmp.io/shield.dl.total/KygekRulesUI)](https://poggit.pmmp.io/p/KygekRulesUI)
+[![Discord](https://img.shields.io/discord/735439472992321587.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/CXtqUZv)
 
 A plugin that will show your server rules in UI form. To open KygekRulesUI, simply type `/rules` in the chat.
 
@@ -14,7 +12,10 @@ A plugin that will show your server rules in UI form. To open KygekRulesUI, simp
 - Use `{player}` to display player name
 - Use `§` as formatting codes
 - Use `\n` to break into a new line
+- Change command description to suit your server
+- Supports command aliases
 - FormAPI plugin is not required
+- Automatic plugin update checker on server startup
 
 # How to Install
 
@@ -27,10 +28,23 @@ A plugin that will show your server rules in UI form. To open KygekRulesUI, simp
 
 # Commands & Permissions
 
-- Command: `/rules` (Change command feature will be available soon!)
-- Permission: `rules.command` (Default set to `true`, use `-rules.command` in PurePerms to blacklist the permission)
+| Command | Default Description | Permission | Default |
+| --- | --- | --- | --- |
+| `/rules` | Server rules in UI form | `kygekrulesui.rules` | true |
+
+Command description can be changed in `config.yml`. You can also add command aliases in `config.yml`.  
+Use `-kygekrulesui.rules` to blacklist the `/rules` command permission to groups/users in PurePerms.
+
+# Upcoming Features
+
+- Currently none planned. You can contribute or suggest for new features.
 
 # Additional Notes
 
-- Join the Discord <a href="https://discord.gg/CXtqUZv">here</a> for latest updates from Kygekraqmak.
-- If you find bugs or want to give suggestions, please visit <a href="https://github.com/Kygekraqmak/KygekRulesUI/issues">here</a> or DM Kygekraqmak#6415 via Discord.
+- Join the Discord <a href="https://discord.gg/CXtqUZv">here</a> for latest updates from KygekTeam.
+- If you found bugs or want to give suggestions, please visit <a href="https://github.com/KygekTeam/KygekRulesUI/issues">here</a> or DM KygekDev#6415 via Discord.
+- We accept any contributions! If you want to contribute please make a pull request in <a href="https://github.com/KygekTeam/KygekRulesUI/pulls">here</a>.
+
+# Other Versions
+
+- [Nukkit](https://github.com/KygekTeam/KygekRulesUI-Nukkit)
