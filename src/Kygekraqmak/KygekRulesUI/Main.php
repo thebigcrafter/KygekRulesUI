@@ -32,7 +32,7 @@ use function str_replace;
 
 class Main extends PluginBase {
 
-	public function onEnable() : void {
+	protected function onEnable() : void {
 		$this->saveDefaultConfig();
 
 		$this->getServer()->getCommandMap()->register("KygekRulesUI", new Commands(
@@ -41,7 +41,7 @@ class Main extends PluginBase {
 		));
 
 		Hydrogen::checkForUpdates($this);
-		HConfig::verifyConfigVersion($this->getConfig(), "2.1");
+		HConfig::verifyConfigVersion($this->getConfig(), "2.2");
 	}
 
 	public function kygekRulesUI(Player $player) {
