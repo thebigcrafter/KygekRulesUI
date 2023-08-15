@@ -1,14 +1,13 @@
---- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/KygekTeam/KygekRulesUI
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/thebigcrafter/KygekRulesUI
 build-by-default: true
 branches:
-- stable
-- pm4
+- main
 projects:
   KygekRulesUI:
     path: ""
     libs:
     - src: Vecnavium/FormsUI/FormsUI
       version: ^1.0.0
-    - src: KygekTeam/ktpmpl-cfs/ktpmpl-cfs
-      version: ^4.0.0
+    - src: thebigcrafter/Hydrogen/Hydrogen
+      version: ^1.0.0
 ...
