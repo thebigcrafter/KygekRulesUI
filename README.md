@@ -31,6 +31,14 @@ A plugin that will show your server rules in UI form. To open KygekRulesUI, simp
 5. Join the server and type `/rules` in the player chat.
 6. Done!
 
+# 🛠️ Development
+
+Install the locked Composer dependencies and use DevTools to package and validate the plugin PHAR. The packaging metadata resolves the pinned FormsUI and Hydrogen virions; user-facing documentation does not need to repeat a builder release version.
+
+```sh
+composer install
+```
+
 # 📜 Commands & Permissions
 
 | Command | Default Description | Permission | Default |

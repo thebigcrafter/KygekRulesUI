@@ -20,7 +20,7 @@ api: 5.0.0
 version: 2.2.1
 authors: [Kygekraqmak, KygekTeam, thebigcrafter]
 description: Shows server rules in UI form
-website: https://github.com/KygekTeam/KygekRulesUI
+website: https://github.com/thebigcrafter/KygekRulesUI
 
 permissions:
   kygekrulesui.rules:
