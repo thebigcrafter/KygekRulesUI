@@ -28,6 +28,10 @@ use pocketmine\utils\TextFormat;
 use thebigcrafter\Hydrogen\HConfig;
 use thebigcrafter\Hydrogen\Hydrogen;
 use Vecnavium\FormsUI\SimpleForm;
+use function array_filter;
+use function array_values;
+use function is_array;
+use function is_string;
 use function str_replace;
 
 class Main extends PluginBase {
@@ -36,27 +40,39 @@ class Main extends PluginBase {
 		$this->saveDefaultConfig();
 
 		$this->getServer()->getCommandMap()->register("KygekRulesUI", new Commands(
-			$this, $this->getConfig()->get("command-desc"),
-			$this->getConfig()->get("command-aliases")
+			$this, $this->getStringConfig("command-desc"),
+			$this->getAliases()
 		));
 
 		Hydrogen::checkForUpdates($this);
 		HConfig::verifyConfigVersion($this->getConfig(), "2.2");
 	}
 
-	public function kygekRulesUI(Player $player) {
-		$form = new SimpleForm(function (Player $player, int $data = null) {
+	public function kygekRulesUI(Player $player) : void {
+		$form = new SimpleForm(function (Player $player, ?int $data = null) : bool {
 			if ($data === null) {
 				return true;
 			}
+			return true;
 		});
-		$title = str_replace("{player}", $player->getName(), TextFormat::colorize($this->getConfig()->get("title")));
-		$content = str_replace("{player}", $player->getName(), TextFormat::colorize($this->getConfig()->get("content")));
-		$button = str_replace("{player}", $player->getName(), TextFormat::colorize($this->getConfig()->get("button")));
+		$title = str_replace("{player}", $player->getName(), TextFormat::colorize($this->getStringConfig("title")));
+		$content = str_replace("{player}", $player->getName(), TextFormat::colorize($this->getStringConfig("content")));
+		$button = str_replace("{player}", $player->getName(), TextFormat::colorize($this->getStringConfig("button")));
 		$form->setTitle($title);
 		$form->setContent($content);
 		$form->addButton($button);
 		$player->sendForm($form);
+	}
+
+	private function getStringConfig(string $key) : string {
+		$value = $this->getConfig()->get($key, "");
+		return is_string($value) ? $value : "";
+	}
+
+	/** @return list<string> */
+	private function getAliases() : array {
+		$value = $this->getConfig()->get("command-aliases", []);
+		return is_array($value) ? array_values(array_filter($value, is_string(...))) : [];
 	}
 
 }
