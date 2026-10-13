@@ -1,14 +1,14 @@
 <h1 align="center">KygekRulesUI</h1>
 
 <p align="center">
-<a href="https://poggit.pmmp.io/p/KygekRulesUI"><img src="https://poggit.pmmp.io/shield.dl.total/KygekRulesUI?style=for-the-badge" alt="poggit" /></a>
+<a href="https://github.com/thebigcrafter/KygekRulesUI/releases"><img src="https://img.shields.io/github/downloads/thebigcrafter/KygekRulesUI/total?style=for-the-badge" alt="GitHub downloads" /></a>
 <a href="https://github.com/thebigcrafter/KygekRulesUI#GPL-3.0-1"><img src="https://img.shields.io/github/license/thebigcrafter/KygekRulesUI?style=for-the-badge" alt="license" /></a>
 <a href="https://discord.gg/PykBfE2TZ9"><img src="https://img.shields.io/discord/1087729577004122112?color=7289DA&label=discord&logo=discord&style=for-the-badge" alt="discord" /></a>
 </p>
 
 # 📖 About
 
-A plugin that will show your server rules in UI form. To open KygekRulesUI, simply type `/rules` in the chat.
+An Axolotl-PM plugin that shows your server rules in a form. To open KygekRulesUI, type `/rules` in chat.
 
 # 🧩 Features
 
@@ -24,9 +24,9 @@ A plugin that will show your server rules in UI form. To open KygekRulesUI, simp
 
 # ⬇️ Installation
 
-1. Download the latest version (It is recommended to always download the latest version for the best experience, except you're having compatibility issues).
+1. Download a release from [GitHub Releases](https://github.com/thebigcrafter/KygekRulesUI/releases). Use an older release only when investigating a compatibility issue.
 2. Put the .phar file to the `plugins` folder.
-3. Restart the server.
+3. Restart Axolotl-PM.
 4. Open the `config.yml` file in the `plugin_data/KygekRulesUI` folder to edit the `title`, `content` and `button` (NEVER TOUCH THE `config-version`!).
 5. Join the server and type `/rules` in the player chat.
 6. Done!
