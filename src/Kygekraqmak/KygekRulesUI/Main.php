@@ -45,7 +45,7 @@ class Main extends PluginBase {
 		));
 
 		Hydrogen::checkForUpdates($this);
-		HConfig::verifyConfigVersion($this->getConfig(), "2.2");
+		HConfig::verifyConfigVersion($this->getConfig(), "2.2.4");
 	}
 
 	public function kygekRulesUI(Player $player) : void {
